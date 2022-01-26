@@ -154,9 +154,7 @@ I also apply the flexbox to help me align the two text `price` and `time` on the
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I want to improve my understanding on the usesage of the flexbox. I also want to know the alternative way of doing the hover for the `view-icon`. Since my way of doing it is to decrease the `opacity` which I think it is not the best practice.
 
 ## Author
 
