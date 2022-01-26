@@ -1,33 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+
+  <!-- import font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+
+
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --primary-blue: hsl(215, 51%, 70%);
+      --primary-cyan: hsl(178, 100%, 50%);
+
+      --mainBG: hsl(217, 54%, 11%);
+      --cardBG: hsl(216, 50%, 16%);
+      --line-color: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    * {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    p {
+      font-weight: 100;
+      font-size: 1.6rem;
+    }
+
+    body {
+      background-color: var(--mainBG);
+    }
+
+    .card {
+      --width: 328px;
+      --height: 544px;
+      background-color: var(--cardBG);
+      width: min-content;
+      height: var(--height);
+      margin: calc((100vh - var(--height)) / 2) auto;
+      border-radius: 20px;
+      box-shadow:0 29px 0px 16px #0D1729, 0 30px 0px 50px #0C182D;
+    }
+
+    .card__top {
+      position: relative;
+      width: 326px;
+      height: 326px;
+    }
+
+    .card__view-img:hover {
+      opacity: 50;
+      cursor: pointer;
+    }
+
+    .card__img {
+      width: calc(100% - 24px * 2);
+      margin: 24px;
+      border-radius: 10px;
+    }
+
+    .card__view-img {
+      position: absolute;
+      --padding: calc((278px - 48px) / 2);
+      padding: var(--padding);
+      --middle: calc(278px / 2);
+      top: calc(50% - var(--middle));
+      left: calc(50% - var(--middle));
+      background-color: hsl(178, 100%, 50%, 50%);
+      border-radius: 10px;
+      opacity: 0;
+    }
+
+    .card__body {
+      margin: 0 22px;
+    }
+
+    .card__body>* {
+      margin-bottom: 20px;
+    }
+
+    .card__title {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .card__title:hover {
+      color: var(--primary-cyan);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .card__paragraph {
+      margin: 20px 0;
+      color: var(--primary-blue);
+      font-weight: 100;
+      font-size: 1.6rem;
+    }
+
+    .card__info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card__price {
+      color: var(--primary-cyan);
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .ethereum {
+      vertical-align: middle;
+    }
+
+    .card__time {
+      color: var(--primary-blue);
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .clock {
+      vertical-align: -10%;
+    }
+
+    .card__user {
+      border-top-color: var(--line-color);
+      border-top-width: 1px;
+      border-top-style: solid;
+      margin: 0 24px;
+      padding: 10px 0;
+    }
+
+    .card__avt {
+      width: 34px;
+      border: 1px var(--white) solid;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+
+    .card__user-info {
+      color: var(--primary-blue);
+    }
+
+    .card__user-info strong {
+      color: var(--white);
+      font-weight: 300;
+    }
+
+    .card__user-info strong:hover {
+      color: var(--primary-cyan);
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+
   </style>
 </head>
+
 <body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="card">
+    <div class="card__top">
+      <img class="card__img" src="./images/image-equilibrium.jpg" alt="image of equilibrium">
+      <img class="card__view-img" src="./images/icon-view.svg" alt="image of icon view">
+    </div>
+    <div class="card__body">
+      <h1 class="card__title">Equilibrium #3429</h1>
+      <p class="card__paragraph">
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      <div class="card__info">
+        <p class="card__price">
+          <img class="ethereum" src="./images/icon-ethereum.svg" alt="icon of ethereum">&nbsp; 0.041 ETH
+        </p>
+        <p class="card__time">
+          <img class="clock" src="./images/icon-clock.svg" alt="icon of clock">&nbsp; 3 days left
+        </p>
+      </div>
+    </div>
+    <div class="card__user">
+      <p class="card__user-info">
+        <img class="card__avt" src="./images/image-avatar.png" alt="image avatar">Creation of <strong>Jules
+          Wyvern</strong>
+      </p>
+    </div>
   </div>
 </body>
+
 </html>
