@@ -1,6 +1,6 @@
 # Frontend Mentor - NFT preview card component solution
 
-This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -12,11 +12,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -43,37 +39,118 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-To see how you can add code snippets, see below:
+Through this project, I learn how to style an icon on the same line with the message such as the price and the time via the `vertical-align`:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="card__info">
+  <p class="card__price">
+    <img
+      class="ethereum"
+      src="./images/icon-ethereum.svg"
+      alt="icon of ethereum"
+    />&nbsp; 0.041 ETH
+  </p>
+  <p class="card__time">
+    <img
+      class="clock"
+      src="./images/icon-clock.svg"
+      alt="icon of clock"
+    />&nbsp; 3 days left
+  </p>
+</div>
 ```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card__price {
+  color: var(--primary-cyan);
+  font-size: 1.5rem;
+  font-weight: 300;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+.ethereum {
+  vertical-align: middle;
+}
+
+.card__time {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.clock {
+  vertical-align: -10%;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Additionally, I learn to center the `icon-view` at the center of an image. By using the `possition: absolute` and calculate the `top` and `left` with repsect to the parent of the `icon-view` which is `div.card__top`. I set the position of the `div` to `relative` in which the `icon-view` willl base on the width and height of the `div` to center the icon.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```html
+<div class="card__top">
+  <img
+    class="card__img"
+    src="./images/image-equilibrium.jpg"
+    alt="image of equilibrium"
+  />
+  <img
+    class="card__view-img"
+    src="./images/icon-view.svg"
+    alt="image of icon view"
+  />
+</div>
+```
+
+```css
+.card__top {
+  position: relative;
+  width: 326px;
+  height: 326px;
+}
+
+.card__view-img {
+  position: absolute;
+  --padding: calc((278px - 48px) / 2);
+  padding: var(--padding);
+  --middle: calc(278px / 2);
+  top: calc(50% - var(--middle));
+  left: calc(50% - var(--middle));
+  background-color: hsl(178, 100%, 50%, 50%);
+  border-radius: 10px;
+  opacity: 0;
+}
+```
+
+I also apply the flexbox to help me align the two text `price` and `time` on the same line.
+
+```html
+<div class="card__info">
+  <p class="card__price">
+    <img
+      class="ethereum"
+      src="./images/icon-ethereum.svg"
+      alt="icon of ethereum"
+    />&nbsp; 0.041 ETH
+  </p>
+  <p class="card__time">
+    <img
+      class="clock"
+      src="./images/icon-clock.svg"
+      alt="icon of clock"
+    />&nbsp; 3 days left
+  </p>
+</div>
+```
+
+```css
+.card__info {
+  display: flex;
+  justify-content: space-between;
+}
+```
 
 ### Continued development
 
@@ -81,23 +158,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Ho Le Minh Thach (Michael Ho)](https://github.com/MichaelHo02)
+- Frontend Mentor - [@MichaelHo02](https://www.frontendmentor.io/profile/MichaelHo02)
