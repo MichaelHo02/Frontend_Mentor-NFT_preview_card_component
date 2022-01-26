@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/my-destop-design.png)
+![](./screenshots/my-desktop-design.png)
 ![](./screenshots/my-mobile-design.png)
 
 ### Links
