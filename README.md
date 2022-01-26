@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/my-destop-design.jpn)
-![](./screenshots/my-mobile-design.jpn)
+![](./screenshots/my-destop-design.png)
+![](./screenshots/my-mobile-design.png)
 
 ### Links
 
